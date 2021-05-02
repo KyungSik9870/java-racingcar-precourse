@@ -48,4 +48,17 @@ public class CarTest {
 		CarPosition afterCarPosition = car.getPosition();
 		assertEquals(beforeCarPosition.getValue(), afterCarPosition.getValue());
 	}
+
+	@Test
+	@DisplayName("자동차가 랜덤한 값에 맞게 전진 또는 멈추는지 테스트.")
+	void 자동차가_랜덤한값에_맞게_전진하거나멈추는지_테스트() {
+		Car car = new Car("abcde");
+		CarPosition beforeCarPosition = car.getPosition();
+		car.move();
+		CarPosition afterCarPosition = car.getPosition();
+
+		boolean isForward = beforeCarPosition.getValue() + 1 == afterCarPosition.getValue();
+		boolean isStop = beforeCarPosition.getValue() == afterCarPosition.getValue();
+		assertTrue(isForward || isStop);
+	}
 }

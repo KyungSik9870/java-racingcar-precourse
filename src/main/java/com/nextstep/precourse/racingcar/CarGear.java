@@ -6,7 +6,7 @@ public class CarGear {
 		return (int)(Math.random() * 9 + 1);
 	}
 
-	public CarStatus move(int randomNum) {
+	public CarStatus getStatus(int randomNum) {
 		if (randomNum >= 4) {
 			return CarStatus.FORWARD;
 		}

@@ -6,6 +6,7 @@ public class Car {
 
 	private String carName;
 	private CarPosition carPosition;
+	private CarGear carGear;
 
 	public Car(String carName) {
 		if (carName.length() > CAR_NAME_MAX_LENGTH) {
@@ -13,6 +14,7 @@ public class Car {
 		}
 		this.carName = carName;
 		this.carPosition = new CarPosition(INIT_CAR_POSITION);
+		this.carGear = new CarGear();
 	}
 
 	public CarPosition getPosition() {
@@ -25,5 +27,16 @@ public class Car {
 
 	public void stop() {
 		this.carPosition = new CarPosition(getPosition().getValue());
+	}
+
+	public void move() {
+		int randomNo = this.carGear.getRandomNum();
+		CarStatus carStatus = this.carGear.getStatus(randomNo);
+		if (carStatus.isForward()) {
+			goForward();
+		}
+		if (carStatus.isStop()) {
+			stop();
+		}
 	}
 }
