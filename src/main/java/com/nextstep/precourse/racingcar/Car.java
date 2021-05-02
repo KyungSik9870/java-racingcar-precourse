@@ -18,4 +18,12 @@ public class Car {
 	public CarPosition getPosition() {
 		return this.carPosition;
 	}
+
+	public void goForward() {
+		this.carPosition = new CarPosition(getPosition().getValue() + 1);
+	}
+
+	public void stop() {
+		this.carPosition = new CarPosition(getPosition().getValue());
+	}
 }

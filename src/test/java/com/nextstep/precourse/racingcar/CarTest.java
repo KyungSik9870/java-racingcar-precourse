@@ -23,8 +23,29 @@ public class CarTest {
 	}
 
 	@Test
+	@DisplayName("자동차가 생성되면 초기 위치는 0인지 테스트.")
 	void 자동차가_생성되면_위치는_0인지_테스트() {
 		Car car = new Car("abcde");
-		assertEquals(car.getPosition().getPosition(), 0);
+		assertEquals(car.getPosition().getValue(), 0);
+	}
+
+	@Test
+	@DisplayName("자동차가 전진했을때 위치가 1 증가하는지 테스트.")
+	void 자동차가_전진했을때_위치가_1증가하는지_테스트() {
+		Car car = new Car("abcde");
+		CarPosition beforeCarPosition = car.getPosition();
+		car.goForward();
+		CarPosition afterCarPosition = car.getPosition();
+		assertEquals(beforeCarPosition.getValue() + 1, afterCarPosition.getValue());
+	}
+
+	@Test
+	@DisplayName("자동차가 멈췄을때 위치가 그대로인지 테스트.")
+	void 자동차가_멈췄을때_위치가_그대로인는지_테스트() {
+		Car car = new Car("abcde");
+		CarPosition beforeCarPosition = car.getPosition();
+		car.stop();
+		CarPosition afterCarPosition = car.getPosition();
+		assertEquals(beforeCarPosition.getValue(), afterCarPosition.getValue());
 	}
 }

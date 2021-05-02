@@ -1,13 +1,13 @@
 package com.nextstep.precourse.racingcar;
 
 public class CarPosition {
-	private int position;
+	private int value;
 
-	public CarPosition(int position) {
-		this.position = position;
+	public CarPosition(int value) {
+		this.value = value;
 	}
 
-	public int getPosition() {
-		return this.position;
+	public int getValue() {
+		return this.value;
 	}
 }
