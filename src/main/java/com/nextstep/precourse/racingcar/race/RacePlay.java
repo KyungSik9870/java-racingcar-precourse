@@ -11,12 +11,16 @@ import com.nextstep.precourse.racingcar.result.RoundResult;
 
 public class RacePlay {
 
-	private final Cars cars;
+	private final Cars playCars;
 	private final RoundCount roundCount;
 
 	public RacePlay(String carNamesString, RoundCount roundCount) {
 		this.roundCount = roundCount;
-		this.cars = new Cars(carNamesString);
+		this.playCars = new Cars(carNamesString);
+	}
+
+	public Cars getPlayCars() {
+		return this.playCars;
 	}
 
 	public RaceResult playRace() {
@@ -30,7 +34,7 @@ public class RacePlay {
 
 	private RoundResult playRound() {
 		List<CarResult> carResults = new ArrayList<>();
-		for (Car car : cars.getCars()) {
+		for (Car car : playCars.getCars()) {
 			car.move();
 			CarResult carResult = new CarResult(car.getCarName(), car.getPosition());
 			carResults.add(carResult);

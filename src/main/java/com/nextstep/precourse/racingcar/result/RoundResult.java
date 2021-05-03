@@ -10,7 +10,7 @@ public class RoundResult {
 		this.carResults = carResults;
 	}
 
-	public List<CarResult> getCarResult() {
+	public List<CarResult> getCarResults() {
 		return this.carResults;
 	}
 }
