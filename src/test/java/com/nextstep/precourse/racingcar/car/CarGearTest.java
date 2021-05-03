@@ -1,9 +1,12 @@
-package com.nextstep.precourse.racingcar;
+package com.nextstep.precourse.racingcar.car;
 
 import static org.assertj.core.api.Assertions.*;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import com.nextstep.precourse.racingcar.utils.ValidationUtils;
 
 public class CarGearTest {
 	@Test
@@ -11,7 +14,7 @@ public class CarGearTest {
 	void 랜덤숫자_생성_테스트() {
 		CarGear carGear = new CarGear();
 		int number = carGear.getRandomNum();
-		assertThat(ValidationUtils.validateNumber(number)).isTrue();
+		Assertions.assertThat(ValidationUtils.validateNumber(number)).isTrue();
 	}
 
 	@Test

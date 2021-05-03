@@ -1,7 +1,13 @@
-package com.nextstep.precourse.racingcar;
+package com.nextstep.precourse.racingcar.race;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.nextstep.precourse.racingcar.car.Car;
+import com.nextstep.precourse.racingcar.car.Cars;
+import com.nextstep.precourse.racingcar.result.CarResult;
+import com.nextstep.precourse.racingcar.result.RaceResult;
+import com.nextstep.precourse.racingcar.result.RoundResult;
 
 public class RacePlay {
 

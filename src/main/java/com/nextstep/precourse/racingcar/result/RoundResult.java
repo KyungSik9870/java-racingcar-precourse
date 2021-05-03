@@ -1,4 +1,4 @@
-package com.nextstep.precourse.racingcar;
+package com.nextstep.precourse.racingcar.result;
 
 import java.util.List;
 

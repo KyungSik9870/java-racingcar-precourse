@@ -1,4 +1,4 @@
-package com.nextstep.precourse.racingcar;
+package com.nextstep.precourse.racingcar.utils;
 
 public class ValidationUtils {
 

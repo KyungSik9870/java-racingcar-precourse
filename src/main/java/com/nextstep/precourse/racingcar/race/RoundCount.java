@@ -1,8 +1,8 @@
-package com.nextstep.precourse.racingcar;
+package com.nextstep.precourse.racingcar.race;
 
 public class RoundCount {
 
-	private final int value;
+	private int value;
 
 	public RoundCount(int value) {
 		this.value = value;

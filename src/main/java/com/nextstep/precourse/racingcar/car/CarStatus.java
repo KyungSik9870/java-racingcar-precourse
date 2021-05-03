@@ -1,4 +1,4 @@
-package com.nextstep.precourse.racingcar;
+package com.nextstep.precourse.racingcar.car;
 
 public enum CarStatus {
 	STOP, FORWARD;

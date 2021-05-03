@@ -6,6 +6,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import com.nextstep.precourse.racingcar.utils.ValidationUtils;
+
 public class ValidationUtilsTest {
 	@DisplayName("생성한 랜덤숫자가 1에서 9까지의 수인지 테스트.")
 	@ParameterizedTest

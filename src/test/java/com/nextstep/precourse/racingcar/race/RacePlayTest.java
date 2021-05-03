@@ -1,4 +1,4 @@
-package com.nextstep.precourse.racingcar;
+package com.nextstep.precourse.racingcar.race;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,12 +8,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.nextstep.precourse.racingcar.result.RaceResult;
+import com.nextstep.precourse.racingcar.result.RoundResult;
+
 public class RacePlayTest {
 
 	private RacePlay racePlay;
 
 	@BeforeEach
-	void setUp(){
+	void setUp() {
 		this.racePlay = new RacePlay("pobi,crong,honux", new RoundCount(5));
 	}
 

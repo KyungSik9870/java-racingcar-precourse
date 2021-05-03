@@ -1,7 +1,8 @@
-package com.nextstep.precourse.racingcar;
+package com.nextstep.precourse.racingcar.car;
 
 public class Car {
-	public static final int INIT_CAR_POSITION = 0;
+	
+	private static final int INIT_CAR_POSITION = 0;
 
 	private CarName carName;
 	private CarPosition carPosition;
