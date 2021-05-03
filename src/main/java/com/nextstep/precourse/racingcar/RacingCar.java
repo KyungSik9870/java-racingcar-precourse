@@ -15,6 +15,6 @@ public class RacingCar {
 
 		RacePlay racePlay = new RacePlay(carNames, roundCount);
 		RaceResult raceResult = racePlay.playRace();
-		System.out.println(raceResult.getPrintMessage());
+		Print.printMessage(raceResult.getPrintMessage());
 	}
 }

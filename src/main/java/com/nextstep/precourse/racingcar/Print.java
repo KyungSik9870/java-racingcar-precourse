@@ -12,4 +12,8 @@ public class Print {
 	public static void enterHowManyTry() {
 		System.out.println(ENTER_HOW_MANY_TRY_ROUND);
 	}
+
+	public static void printMessage(String message) {
+		System.out.println(message);
+	}
 }
