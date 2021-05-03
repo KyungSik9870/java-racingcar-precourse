@@ -14,8 +14,8 @@ public class RacePlay {
 	private final Cars playCars;
 	private final RoundCount roundCount;
 
-	public RacePlay(String carNamesString, RoundCount roundCount) {
-		this.roundCount = roundCount;
+	public RacePlay(String carNamesString, int roundCount) {
+		this.roundCount = new RoundCount(roundCount);
 		this.playCars = new Cars(carNamesString);
 	}
 

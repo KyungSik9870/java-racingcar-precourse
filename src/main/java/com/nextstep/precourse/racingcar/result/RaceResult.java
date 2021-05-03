@@ -10,6 +10,7 @@ public class RaceResult implements Printable {
 
 	public static final String WINNERS_STRING = "가 최종 우승했습니다.";
 	public static final String DELIMITER = ",";
+	public static final String PLAY_RESULT_STRING = "실행 결과";
 	private List<RoundResult> roundResults;
 
 	public RaceResult(List<RoundResult> roundResults) {
@@ -50,13 +51,29 @@ public class RaceResult implements Printable {
 	@Override
 	public String getPrintMessage() {
 		StringBuilder builder = new StringBuilder();
+
+		builder.append(System.lineSeparator());
+		builder.append(PLAY_RESULT_STRING);
+		builder.append(System.lineSeparator());
+
+		for (RoundResult roundResult : this.roundResults) {
+			builder.append(roundResult.getPrintMessage());
+		}
+
+		builder.append(getPrintWinnerMessage());
+		builder.append(System.lineSeparator());
+		return builder.toString();
+	}
+
+	private String getPrintWinnerMessage() {
+		StringBuilder builder = new StringBuilder();
 		List<String> winnersCarName = new ArrayList<>();
 
-		for(CarName carName : this.getWinnersCarName()){
+		for (CarName carName : this.getWinnersCarName()) {
 			winnersCarName.add(carName.getName());
 		}
 
-		builder.append(String.join(DELIMITER,winnersCarName));
+		builder.append(String.join(DELIMITER, winnersCarName));
 		builder.append(WINNERS_STRING);
 		builder.append(System.lineSeparator());
 		return builder.toString();
