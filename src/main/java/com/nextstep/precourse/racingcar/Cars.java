@@ -13,4 +13,8 @@ public class Cars {
 			this.cars.add(new Car(carName));
 		}
 	}
+
+	public List<Car> getCars() {
+		return this.cars;
+	}
 }

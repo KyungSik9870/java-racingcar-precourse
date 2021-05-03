@@ -16,9 +16,18 @@ public class RacePlay {
 	public RaceResult playRace() {
 		List<RoundResult> roundResults = new ArrayList<>();
 		for (int i = 0; i < roundCount; i++) {
-			RoundResult roundResult = new RoundResult(cars);
+			RoundResult roundResult = playRound();
 			roundResults.add(roundResult);
 		}
 		return new RaceResult(roundResults);
+	}
+
+	private RoundResult playRound() {
+		List<CarResult> carResults = new ArrayList<>();
+		for (Car car : cars.getCars()) {
+			CarResult carResult = new CarResult();
+			carResults.add(carResult);
+		}
+		return new RoundResult(carResults);
 	}
 }

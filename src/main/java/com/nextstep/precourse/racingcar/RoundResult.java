@@ -1,10 +1,16 @@
 package com.nextstep.precourse.racingcar;
 
+import java.util.List;
+
 public class RoundResult {
 
-	private Cars cars;
+	private List<CarResult> carResults;
 
-	public RoundResult(Cars cars) {
-		this.cars = cars;
+	public RoundResult(List<CarResult> carResults) {
+		this.carResults = carResults;
+	}
+
+	public List<CarResult> getCarResult() {
+		return this.carResults;
 	}
 }
