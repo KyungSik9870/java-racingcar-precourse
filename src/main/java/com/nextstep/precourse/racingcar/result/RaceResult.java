@@ -6,8 +6,10 @@ import java.util.List;
 import com.nextstep.precourse.racingcar.car.CarName;
 import com.nextstep.precourse.racingcar.car.CarPosition;
 
-public class RaceResult {
+public class RaceResult implements Printable {
 
+	public static final String WINNERS_STRING = "가 최종 우승했습니다.";
+	public static final String DELIMITER = ",";
 	private List<RoundResult> roundResults;
 
 	public RaceResult(List<RoundResult> roundResults) {
@@ -43,5 +45,20 @@ public class RaceResult {
 			max = Math.max(max, carPosition.getValue());
 		}
 		return new CarPosition(max);
+	}
+
+	@Override
+	public String getPrintMessage() {
+		StringBuilder builder = new StringBuilder();
+		List<String> winnersCarName = new ArrayList<>();
+
+		for(CarName carName : this.getWinnersCarName()){
+			winnersCarName.add(carName.getName());
+		}
+
+		builder.append(String.join(DELIMITER,winnersCarName));
+		builder.append(WINNERS_STRING);
+		builder.append(System.lineSeparator());
+		return builder.toString();
 	}
 }
