@@ -13,10 +13,6 @@ public class Car {
 		this.carGear = new CarGear();
 	}
 
-	public CarPosition getPosition() {
-		return this.carPosition;
-	}
-
 	public void goForward() {
 		this.carPosition = new CarPosition(getPosition().getValue() + 1);
 	}
@@ -34,5 +30,13 @@ public class Car {
 		if (carStatus.isStop()) {
 			stop();
 		}
+	}
+
+	public CarPosition getPosition() {
+		return this.carPosition;
+	}
+
+	public CarName getCarName() {
+		return this.carName;
 	}
 }

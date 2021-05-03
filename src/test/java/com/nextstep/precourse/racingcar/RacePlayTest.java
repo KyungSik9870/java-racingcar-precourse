@@ -14,7 +14,7 @@ public class RacePlayTest {
 
 	@BeforeEach
 	void setUp(){
-		this.racePlay = new RacePlay("pobi,crong,honux", 5);
+		this.racePlay = new RacePlay("pobi,crong,honux", new RoundCount(5));
 	}
 
 	@Test
