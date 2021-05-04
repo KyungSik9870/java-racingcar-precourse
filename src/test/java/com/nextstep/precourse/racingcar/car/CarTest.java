@@ -11,7 +11,7 @@ public class CarTest {
 
 	@ParameterizedTest
 	@ValueSource(strings = {"abcf", "aaaaa"})
-	@DisplayName("자동차의 이름이 6자 이상이면 Exception을 발생시키는지 테스트.")
+	@DisplayName("자동차의 이름이 5자 이하면 정상적으로 생성되는지 테스트.")
 	void 자동차이름_5자이하면_생성되는지_테스트(String carName) {
 		new CarName(carName);
 	}
