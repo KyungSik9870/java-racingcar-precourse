@@ -1,5 +1,7 @@
 package com.nextstep.precourse.racingcar.result;
 
+import static com.nextstep.precourse.racingcar.Print.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,9 +10,6 @@ import com.nextstep.precourse.racingcar.car.CarPosition;
 
 public class RaceResult implements Printable {
 
-	public static final String WINNERS_STRING = "가 최종 우승했습니다.";
-	public static final String DELIMITER = ",";
-	public static final String PLAY_RESULT_STRING = "실행 결과";
 	private List<RoundResult> roundResults;
 
 	public RaceResult(List<RoundResult> roundResults) {
@@ -33,21 +32,6 @@ public class RaceResult implements Printable {
 		return winnersCarName;
 	}
 
-	private void addCarNameIfHasMaxPosition(List<CarName> winnersCar, CarResult carResult, CarPosition maxPosition) {
-		if (carResult.getCarPosition().equals(maxPosition)) {
-			winnersCar.add(carResult.getCarName());
-		}
-	}
-
-	private CarPosition getMaxPosition(List<CarResult> carResult) {
-		int max = 0;
-		for (CarResult result : carResult) {
-			CarPosition carPosition = result.getCarPosition();
-			max = Math.max(max, carPosition.getValue());
-		}
-		return new CarPosition(max);
-	}
-
 	@Override
 	public String getPrintMessage() {
 		StringBuilder builder = new StringBuilder();
@@ -63,6 +47,21 @@ public class RaceResult implements Printable {
 		builder.append(getPrintWinnerMessage());
 		builder.append(System.lineSeparator());
 		return builder.toString();
+	}
+
+	private void addCarNameIfHasMaxPosition(List<CarName> winnersCar, CarResult carResult, CarPosition maxPosition) {
+		if (carResult.getCarPosition().equals(maxPosition)) {
+			winnersCar.add(carResult.getCarName());
+		}
+	}
+
+	private CarPosition getMaxPosition(List<CarResult> carResult) {
+		int max = 0;
+		for (CarResult result : carResult) {
+			CarPosition carPosition = result.getCarPosition();
+			max = Math.max(max, carPosition.getValue());
+		}
+		return new CarPosition(max);
 	}
 
 	private String getPrintWinnerMessage() {

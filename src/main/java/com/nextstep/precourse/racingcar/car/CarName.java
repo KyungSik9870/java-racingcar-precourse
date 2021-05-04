@@ -1,5 +1,7 @@
 package com.nextstep.precourse.racingcar.car;
 
+import static com.nextstep.precourse.racingcar.Print.*;
+
 import java.util.Objects;
 
 public class CarName {
@@ -9,7 +11,7 @@ public class CarName {
 
 	public CarName(String name) {
 		if (name.length() > CAR_NAME_MAX_LENGTH) {
-			throw new IllegalArgumentException("자동차 이름은 5자 이하만 가능합니다.");
+			throw new IllegalArgumentException(CAR_NAME_CAN_CONTAINS_5CHARACTERS);
 		}
 		this.name = name;
 	}

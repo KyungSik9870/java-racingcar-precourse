@@ -1,5 +1,7 @@
 package com.nextstep.precourse.racingcar.result;
 
+import static com.nextstep.precourse.racingcar.Print.*;
+
 import java.util.Collections;
 
 import com.nextstep.precourse.racingcar.car.CarName;
@@ -7,8 +9,6 @@ import com.nextstep.precourse.racingcar.car.CarPosition;
 
 public class CarResult implements Printable {
 
-	public static final String STR_FORMAT_BETWEEN_NAME_AND_MOVE = " : ";
-	public static final String CAR_MOVE = "-";
 	private CarName carName;
 	private CarPosition carPosition;
 
