@@ -1,9 +1,13 @@
 package com.nextstep.precourse.racingcar.car;
 
+import java.util.Random;
+
 public class CarGear {
 
+	private Random random = new Random();
+
 	public int getRandomNum() {
-		return (int)(Math.random() * 9 + 1);
+		return random.nextInt(10);
 	}
 
 	public CarStatus getStatus(int randomNum) {
